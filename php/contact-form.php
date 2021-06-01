@@ -1,5 +1,5 @@
 <?php
-	$to = 'christine@stevensgroup.consulting';
+	$to = 'info@stevensgroup.consulting';
 	$errors = array();
 
 	// Check if name has been entered
