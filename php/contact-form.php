@@ -13,7 +13,7 @@
 	}
 	
 	//Check if message has been entered
-	if (!isset($_POST['massage'])) {
+	if (!isset($_POST['message'])) {
 		$errors['message'] = 'Please enter your message';
 	}
 
@@ -40,8 +40,9 @@
 
 
 	$name = $_POST['name'];
+	$company = $_POST['company'];
 	$email = $_POST['email'];
-	$message = $_POST['massage'];
+	$message = $_POST['message'];
 
 	if(isset($_SERVER['HTTP_REFERER'])) {
       $message .= "\n The form is submitted at: ".$_SERVER['HTTP_REFERER'];
@@ -50,7 +51,7 @@
 	$from = $email;
 	$subject = 'Contact Form : The Stevens Group';
 	
-	$body = "From: $name\n E-Mail: $email\n Message:\n $message";
+	$body = "From: $name\n Company: $company\n E-Mail: $email\n Message:\n $message";
 
 
 	//send the email
@@ -68,7 +69,7 @@
 	$result = '';
 	$result .= '<div class="alert alert-danger alert-dismissible" role="alert">';
 	$result .= '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-	$result .= 'Something bad happened during sending this message. Please try again later';
+	$result .= 'Something happened when trying to send this message. Please try again later';
 	$result .= '</div>';
 
 	echo $result;
